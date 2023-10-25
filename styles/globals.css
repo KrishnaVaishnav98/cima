@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://db.onlinewebfonts.com/c/4f56d07ad5e5b6d7ab735217e78081ee?family=Bw+Stretch+Bold");
+@import url("https://db.onlinewebfonts.com/c/bc5e5e1011dd6041edba9748574c51c3?family=Studio6");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.main {
+    justify-content: center;
+    background-color: #333333;
+    text-align: center;
+}
+
+
+
+/* Tailwind Styles */
+
+.heading {
+    height: 90px;
+    width: 274px;
+    margin-top: 120px;
+    text-align: center;
+    color: #F5F3ED;
+    font-family: "Bw Stretch Bold";
+    margin: auto;
+    padding: auto;
+}
+
+.heading2 {
+    width: 45%;
+    margin-top: 275px;
+    text-align: center;
+    color: #F5F3ED;
+    font-family: "Studio6";
+    font-weight: 400;
+    line-height: 24px;
+    margin: auto;
+    padding: auto;
+}
+
+.process-text {
+    font-size: 15px;
+    font-family: "Studio6";
+    font-weight: 500;
+    line-height: 16.8px;
+    margin-top: 10px;
+}
+
+.bwStretchfont {
+    font-family: "Bw Stretch Bold";
+    font-weight: 800;
+}
+
+.studiofont {
+    font-family: "Studio6";
+}
+
+.prismTextColor {
+    color: #F5F3ED;
+}
+
+.prismBGColor {
+    background-color: #F5F3ED;
+}
+
+
+@media only screen and (max-width: 480px) {
+
+    .process-text {
+        font-size: 10px;
+        color: #FFFFFF;
+        font-family: "Studio6";
+        font-weight: 500;
+        line-height: 16.8px;
+        margin-top: 10px;
+    }
+
+    .heading {
+        width: 300px;
+        margin-top: 20px;
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .heading2 {
+        width: 80%;
+        margin-top: 75px;
+        text-align: center;
+        line-height: 15px;
+        margin: auto;
+        padding: auto;
+        font-size: 12px;
+        text-align: justify;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+    .process-text {
+        font-size: 10px;
+        color: #FFFFFF;
+        font-family: "Studio6";
+        font-weight: 500;
+        line-height: 16.8px;
+        margin-top: 10px;
+    }
+
+    .heading {
+        width: 300px;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .heading2 {
+        width: 80%;
+        margin-top: 75px;
+        text-align: center;
+        line-height: 15px;
+        margin: auto;
+        padding: auto;
+        font-size: 12px;
+        text-align: justify;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .process-text {
+        font-size: 15px;
+        color: #FFFFFF;
+        font-family: "Studio6";
+        font-weight: 500;
+        line-height: 16.8px;
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    .heading {
+        width: 300px;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 36px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .process-text {
+        font-size: 15px;
+        color: #FFFFFF;
+        font-family: "Studio6";
+        font-weight: 500;
+        line-height: 16.8px;
+        margin-top: 10px;
+    }
+
+}
