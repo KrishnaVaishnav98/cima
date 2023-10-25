@@ -6,10 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "server": "json-server --watch data.json --port 8080"
   },
   "dependencies": {
+    "axios": "^1.5.1",
     "bcrypt": "^5.1.1",
+    "json-server": "^0.17.4",
     "mongodb": "^6.2.0",
     "mongoose": "^7.6.3",
     "next": "13.5.6",

@@ -5,10 +5,13 @@ import { Membership3 } from '@components/Membership3';
 import { MembershipDiv } from '@components/MembershipDiv';
 import { NonVotingMembership } from '@components/NonVotingMembership';
 import { Process } from '@components/Process';
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from './context/Context';
 
 
 const HomePage = () => {
+
+    const { step } = useContext(Context)
 
     return (
         <section className='w-full py-10'>
@@ -19,9 +22,7 @@ const HomePage = () => {
                 </div>
                 <Process />
             </div>
-            <Membership1 />
-            {/* <Membership2 /> */}
-            {/* <Membership3 /> */}
+            {step == 1 ? <Membership1 /> : step == 2 ? <Membership2 /> : step == 3 ? <Membership3 /> : <Membership1 />}
 
         </section>
     );

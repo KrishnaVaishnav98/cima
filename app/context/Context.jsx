@@ -10,6 +10,7 @@ const obj = {
 const ContextProvider = ({ children }) => {
 
     const [step, setStep] = useState(obj.step)
+    const [membership, setMembership] = useState([])
 
     const nextStep = () => {
         if (step <= 2) {
@@ -23,8 +24,12 @@ const ContextProvider = ({ children }) => {
         }
     }
 
+    const toPageOne = () => {
+        setStep(1)
+    }
+
     return (
-        <Context.Provider value={{ step, nextStep, prevStep }}>
+        <Context.Provider value={{ step, nextStep, prevStep, toPageOne, membership, setMembership }}>
             {children}
         </Context.Provider>
     )

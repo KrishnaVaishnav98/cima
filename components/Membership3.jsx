@@ -1,8 +1,12 @@
 'use client'
+import { Context } from '@app/context/Context'
 import Link from 'next/link'
-import React from 'react'
+import React, { useContext } from 'react'
 
 export const Membership3 = () => {
+
+    const { step, nextStep, prevStep } = useContext(Context)
+
     return (
         <>
             <div className='py-20 px-8 2xl:px-10  xl:px-10  lg:px-10  md:px-2  sm:px-2  2xl:flex xl:flex lg:flex md:block sm:block'>
