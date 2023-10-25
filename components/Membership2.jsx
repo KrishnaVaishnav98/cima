@@ -1,9 +1,14 @@
 'use client'
 
-import React from 'react'
+import { Context } from '@app/context/Context';
+import React, { useContext } from 'react'
 import { AiFillLeftCircle } from "react-icons/ai";
 
 export const Membership2 = () => {
+
+    const { step, nextStep, prevStep, membership } = useContext(Context)
+    console.log(membership)
+
     return (
         <div className='2xl:w-3/5 xl:w-3/5 lg:w-3/5 md:w-5/6 sm:w-5/6 m-auto mt-20'>
             <div className='bg-neutral-900 p-10 m-5'>
@@ -108,9 +113,9 @@ export const Membership2 = () => {
             <div className='flex gap-10 justify-center m-auto my-12'>
                 <div className='flex items-center gap-1 cursor-pointer'>
                     <AiFillLeftCircle fontSize={"20px"} color={"#F5F3ED"} />
-                    <button className='mt-2 studiofont text-[15px] font-normal prismTextColor'> GO BACK</button>
+                    <button onClick={prevStep} className='mt-2 studiofont text-[15px] font-normal prismTextColor'> GO BACK</button>
                 </div>
-                <div className='w-72 h-12 flex gap-1 items-center '>
+                <div className='w-72 h-12 flex gap-1 items-center' onClick={nextStep}>
                     <div className='w-5/6 h-12 bg-neutral-500 items-center text-center'>
                         <button className='mt-2 bwStretchfont text-[21px] items-center text-neutral-800 font-extrabold'>NEXT: CONFIRM & PAY</button>
                     </div>
