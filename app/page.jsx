@@ -21,7 +21,7 @@ const HomePage = () => {
     }
 
     return (
-        <section className='w-full py-10'>
+        <section className='w-full py-10 m-auto p-auto'>
             <div className='block 2xl:mt-28 xl:mt-28 lg:mt-28 md:mt-5 sm:mt-5 justify-center'>
                 <div className="heading 2xl:text-7xl xl:text-7xl lg:text-7xl md:text-[36] sm:text-[36] ">JOIN CIMA</div>
                 <div className='heading2'>

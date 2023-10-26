@@ -10,11 +10,11 @@ export const NonVotingMembership = () => {
 
     return (
         <div className='2xl:mx-20 xl:mx-20 lg:mx-20 md:mx-10 sm:mx-5 my-16 studiofont prismTextColor'>
-            <div className='2xl:text-left xl:text-left lg:text-left md:text-left sm:text-center'>
+            <div className='2xl:text-left xl:text-left lg:text-left md:text-center sm:text-center'>
                 <p className='text-2xl studiofont prismTextColor'>Non-Voting Memberships</p>
             </div>
             <div className='mt-10 2xl:flex xl:flex lg:flex justify-center text-center gap-10'>
-                <div className={`2xl:w-1/3 xl:w-1/3 lg:w-1/3 md:w-5/6 sm:5/6 2xl:mt-0 xl:mt-0 lg:mt-0 md:mt-8 sm:mt-8 p-8 bg-neutral-900 ${flag1 ? "border border-neutral-300" : null}`}>
+                <div className={`2xl:w-1/3 xl:w-1/3 lg:w-1/3 md:w-5/6 sm:5/6 2xl:mt-0 xl:mt-0 lg:mt-0 md:mt-8 sm:mt-8 m-auto p-8 bg-neutral-900 ${flag1 ? "border border-neutral-300" : null}`}>
                     <div className='text-left leading-10'>
                         <p className='text-2xl leading-10 studiofont prismTextColor text-left mb-6 pb-2'>Affiliate</p>
                         <p className='studiofont text-lg pb-2'>Industry Services Companies</p>
@@ -29,7 +29,7 @@ export const NonVotingMembership = () => {
                     </div>
                 </div>
 
-                <div className={`2xl:w-1/3 xl:w-1/3 lg:w-1/3 md:w-5/6 sm:5/6 2xl:mt-0 xl:mt-0 lg:mt-0 md:mt-8 sm:mt-8 p-8 bg-neutral-900 ${flag2 ? "border border-neutral-300" : null}`}>
+                <div className={`2xl:w-1/3 xl:w-1/3 lg:w-1/3 md:w-5/6 sm:5/6 2xl:mt-0 xl:mt-0 lg:mt-0 md:mt-8 sm:mt-8 m-auto p-8 bg-neutral-900 ${flag2 ? "border border-neutral-300" : null}`}>
                     <div className='text-left leading-10'>
                         <p className='text-2xl leading-10 studiofont prismTextColor text-left mb-6 pb-2'>Affiliate</p>
                         <p className='studiofont text-lg pb-2'>Individual Musicians or Professionals</p>
@@ -38,7 +38,7 @@ export const NonVotingMembership = () => {
 
                 </div>
 
-                <div className={`2xl:w-1/3 xl:w-1/3 lg:w-1/3 md:w-5/6 sm:5/6 2xl:mt-0 xl:mt-0 lg:mt-0 md:mt-8 sm:mt-8 p-8 bg-neutral-900 ${flag3 ? "border border-neutral-300" : ''}`}>
+                <div className={`2xl:w-1/3 xl:w-1/3 lg:w-1/3 md:w-5/6 sm:5/6 2xl:mt-0 xl:mt-0 lg:mt-0 md:mt-8 sm:mt-8 m-auto p-8 bg-neutral-900 ${flag3 ? "border border-neutral-300" : ''}`}>
                     <div className='text-left leading-10'>
                         <p className='text-2xl leading-10 studiofont prismTextColor text-left mb-6 pb-2'>Affiliate</p>
                         <p className='studiofont text-lg pb-2'>Not-for Profit Association</p>
