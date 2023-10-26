@@ -11,8 +11,9 @@ export const MembershipDiv = ({ flag1, flag2, flag3, setFlag1, setFlag2, setFlag
     return (
         <div className='2xl:mx-20 xl:mx-20 lg:mx-20 md:mx-20 sm:mx-5 my-16 studiofont prismTextColor m-auto p-auto'>
             <div className='2xl:text-left xl:text-left lg:text-left md:text-center sm:text-center'>
-                <p className='text-2xl studiofont prismTextColor'>Canadian Independent Music Association (CIMA) Memberships</p>
-                <p className='text-base text-neutral-300 '>Distributors should only chose between Class C and Class B Tiers.</p>
+                <p className='2xl:text-2xl xl:text-2xl lg:text-2xl md:text-base sm:text-base studiofont prismTextColor'>
+                    Canadian Independent Music Association (CIMA) Memberships</p>
+                <p className='2xl:text-base xl:text-base lg:text-base md:text-xs sm:text-xs  text-neutral-300 '>Distributors should only chose between Class C and Class B Tiers.</p>
             </div>
             <div className='mt-10 2xl:flex xl:flex lg:flex justify-center text-center gap-10'>
                 <div className={`2xl:w-1/3 xl:w-1/3 lg:w-1/3 md:w-5/6 sm:5/6 p-8 bg-neutral-900 2xl:mt-0 xl:mt-0 lg:mt-0 m-auto md:mt-8 sm:mt-8 ${flag1 ? "border border-neutral-300" : null} `}>
