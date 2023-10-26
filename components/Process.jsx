@@ -11,7 +11,7 @@ export const Process = () => {
     //const step = 1;
 
     return (
-        <div className='2xl:flex xl:flex lg:flex w-full px-20 gap-10 mt-10 m-auto p-auto justify-center text-center'>
+        <div className='2xl:flex xl:flex lg:flex w-full px-20 gap-10 mt-10 m-auto justify-center text-center'>
             <div className='2xl:w-1/3 xl:w-1/3 lg:w-1/3 md:w-9/12 sm:w-9/12 md:mt-10 sm:mt-10 text-center m-auto'>
                 <div className={`h-[1px] ${step == 1 ? 'bg-white' : 'bg-[#17B26A]'}`} />
 

@@ -7,10 +7,10 @@ export const NonVotingMembership = () => {
     const [flag1, setFlag1] = useState(false)
     const [flag2, setFlag2] = useState(false)
     const [flag3, setFlag3] = useState(false)
-    
+
     return (
-        <div className='mx-20 my-16 studiofont prismTextColor'>
-            <div className='text-left'>
+        <div className='2xl:mx-20 xl:mx-20 lg:mx-20 md:mx-10 sm:mx-5 my-16 studiofont prismTextColor'>
+            <div className='2xl:text-left xl:text-left lg:text-left md:text-left sm:text-center'>
                 <p className='text-2xl studiofont prismTextColor'>Non-Voting Memberships</p>
             </div>
             <div className='mt-10 2xl:flex xl:flex lg:flex justify-center text-center gap-10'>
@@ -20,7 +20,7 @@ export const NonVotingMembership = () => {
                         <p className='studiofont text-lg pb-2'>Industry Services Companies</p>
                     </div>
                     <Button text={`${flag1 ? "SELECTED" : "SELECT"}`} color={`${flag1 ? "bg-neutral-500" : "prismBGColor"}`} onClick={() => setFlag1(!flag1)} />
-                    <div className='w-full flex px-2 py-4 items-center text-center bg-[#333333] mt-10'>
+                    <div className='w-full flex 2xl:px-2 xl:px-2 lg:px-2 md:px-0 sm:px-0 py-4 items-center text-center bg-[#333333] mt-10'>
                         <li className='pl-2 text-xl'>
                             <ul>
                             </ul>

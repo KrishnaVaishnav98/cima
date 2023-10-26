@@ -162,7 +162,7 @@ export const Membership3 = () => {
                         <div className='mt-8'>
                             <p className='text-left text-[#7A7A7A]'>Security code</p>
                             <input
-                                type='number' className='studiofont text-2xl text-[#212121] text-left mt-1 prismBGColor w-full outline-none placeholder-neutral-400'
+                                type='number' className='studiofont text-2xl text-[#212121] text-left mt-1 prismBGColor w-full outline-none placeholder-neutral-400 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'
                                 placeholder='XXX'
                                 maxLength="3"
                             />

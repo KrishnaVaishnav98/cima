@@ -9,11 +9,11 @@ export const Membership2 = () => {
     const { formdata, handleChange, nextStep, prevStep, membership } = useContext(Context)
 
     const handleNext = () => {
-        // if (formdata.orgName && formdata.orgCategory && formdata.orgStreetAdd && formdata.orgCity && formdata.orgState && formdata.orgCountry && formdata.orgPostal && formdata.orgEmail && formdata.orgPhone && formdata.userFirstName && formdata.userLastName && formdata.userEmail && formdata.userPass) {
-        nextStep()
-        // } else {
-        //     alert("Please fill all required details")
-        // }
+        if (formdata.orgName && formdata.orgCategory && formdata.orgStreetAdd && formdata.orgCity && formdata.orgState && formdata.orgCountry && formdata.orgPostal && formdata.orgEmail && formdata.orgPhone && formdata.userFirstName && formdata.userLastName && formdata.userEmail && formdata.userPass) {
+            nextStep()
+        } else {
+            alert("Please fill all required details")
+        }
     }
 
     return (
@@ -27,7 +27,7 @@ export const Membership2 = () => {
                     />
                     <hr className='prismTextColor mt-2' />
                 </div>
-                <div className='text-left mt-8 w-full text-neutral-400'>
+                <div className='text-left mt-8 w-full text-white'>
                     <select name="orgCategory" className='bg-neutral-900 w-full outline-none'
                         value={formdata.orgCategory} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}>
                         <option value="" >Category of your organization</option>
@@ -53,7 +53,7 @@ export const Membership2 = () => {
                         />
                         <hr className='prismTextColor mt-2' />
                     </div>
-                    <div className='text-left mt-8 w-full text-neutral-400'>
+                    <div className='text-left mt-8 w-full text-white'>
                         <select className='bg-neutral-900 w-full outline-none'
                             name={"orgState"} value={formdata.orgState} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}
                         >
@@ -75,7 +75,7 @@ export const Membership2 = () => {
                         <hr className='prismTextColor mt-2' />
                     </div>
                     <div className='text-left mt-8 w-full'>
-                        <input className='bg-neutral-900 w-full outline-none prismTextColor placeholder-neutral-400'
+                        <input className='bg-neutral-900 w-full outline-none prismTextColor placeholder-neutral-400 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none'
                             type="number" placeholder='Postal / Zip'
                             name={"orgPostal"} value={formdata.orgPostal} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}
                         />
@@ -147,9 +147,9 @@ export const Membership2 = () => {
                     <AiFillLeftCircle fontSize={"20px"} color={"#F5F3ED"} />
                     <button onClick={prevStep} className='mt-2 studiofont text-[15px] font-normal prismTextColor'> GO BACK</button>
                 </div>
-                <div className='w-72 h-12 flex gap-1 items-center' onClick={handleNext}>
+                <div className='2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-72 h-12 flex gap-1 items-center' onClick={handleNext}>
                     <div className='w-5/6 h-12 bg-neutral-500 items-center text-center'>
-                        <button className='mt-2 bwStretchfont text-[21px] items-center text-neutral-800 font-extrabold'>NEXT: CONFIRM & PAY</button>
+                        <button className='mt-2 bwStretchfont 2xl:text-[21px] xl:text-[21px] lg:text-[21px] md:text-[8px] sm:text-[16px] items-center text-neutral-800 font-extrabold'>NEXT: CONFIRM & PAY</button>
                     </div>
                     <div className='w-1/6 h-12 bg-neutral-500 items-center text-center'>
                     </div>
