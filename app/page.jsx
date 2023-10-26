@@ -7,11 +7,18 @@ import { NonVotingMembership } from '@components/NonVotingMembership';
 import { Process } from '@components/Process';
 import React, { useContext } from 'react';
 import { Context } from './context/Context';
+import { Membership4 } from '@components/Membership4';
 
 
 const HomePage = () => {
 
     const { step } = useContext(Context)
+
+    if (step == 4) {
+        return (
+            <Membership4 />
+        )
+    }
 
     return (
         <section className='w-full py-10'>
@@ -23,9 +30,9 @@ const HomePage = () => {
                 <Process />
             </div>
             {step == 1 ? <Membership1 /> : step == 2 ? <Membership2 /> : step == 3 ? <Membership3 /> : <Membership1 />}
-
         </section>
     );
+
 }
 
 export default HomePage;

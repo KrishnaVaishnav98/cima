@@ -53,9 +53,9 @@ export const Membership1 = () => {
         <>
             <MembershipDiv flag1={flag1} flag2={flag2} flag3={flag3} setFlag1={setFlag1} setFlag2={setFlag2} setFlag3={setFlag3} />
             <NonVotingMembership />
-            <div className='w-72 h-12 m-auto my-12 flex gap-1 items-center '>
+            <div className='w-72 h-12 m-auto my-12 flex gap-1 items-center' onClick={handleClick}>
                 <div className='w-5/6 h-12 bg-neutral-500 items-center text-center'>
-                    <button onClick={handleClick} className='mt-2 bwStretchfont text-xl items-center text-neutral-800 font-extrabold'>NEXT:YOUR DETAILS</button>
+                    <button className='mt-2 bwStretchfont text-xl items-center text-neutral-800 font-extrabold'>NEXT:YOUR DETAILS</button>
                 </div>
                 <div className='w-1/6 h-12 bg-neutral-500 items-center text-center'>
                 </div>

@@ -19,7 +19,7 @@ export const Process = () => {
                 <div className='flex justify-between '>
                     <div className='flex'>
                         {step > 1 ? <div className='bg-[#17B26A] h-4 w-4 rounded-full mt-2 mr-2'></div> : ""}
-                        <p className={`text-[15px] studiofont mt-2 font-normal text-white text-left`}>CHOOSE A MEMBERSHIP TYPE</p>
+                        <p className={`2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[10px] sm:text-[10px] studiofont mt-2 font-normal text-white text-left`}>CHOOSE A MEMBERSHIP TYPE</p>
                     </div>
 
                     <p className={`text-[15px] studiofont mt-2 font-normal text-white text-right`}>01</p>

@@ -3,11 +3,13 @@ import { Context } from '@app/context/Context'
 import Link from 'next/link'
 import axios from 'axios';
 import React, { useContext, useState } from 'react'
+import { Membership4 } from './Membership4';
 
 export const Membership3 = () => {
 
     const { step, nextStep, prevStep, formdata, toPageOne, membership } = useContext(Context)
     const [terms, setTerms] = useState(false)
+    const [step4, setStpe4] = useState(false)
 
     const handleRadio = (e) => {
         e.target.checked ? setTerms(true) : setTerms(false)
@@ -25,14 +27,13 @@ export const Membership3 = () => {
         try {
             const response = await axios.post("http://localhost:8080/users", formdata);
             const response2 = await axios.post("http://localhost:8080/subscription", { membership, userEmail: formdata.userEmail });
-
-            alert("Registration successfull")
-
+            nextStep()
         } catch (error) {
             console.error('Axios Error:', error);
         }
 
     }
+
 
     return (
         <>
@@ -196,11 +197,9 @@ export const Membership3 = () => {
 
             </div>
 
-            <div className='w-40 mt-8 h-12 flex gap-1 items-center m-auto'>
+            <div className='w-40 mt-8 h-12 flex gap-1 items-center m-auto cursor-ponter' onClick={handlePay}>
                 <div className='w-5/6 h-12 prismBGColor items-center text-center'>
-                    <button className='mt-2 bwStretchfont text-[21px] items-center text-[#333333] font-extrabold'
-                        onClick={handlePay}
-                    >PAY</button>
+                    <button className='mt-2 bwStretchfont text-[21px] items-center text-[#333333] font-extrabold'>PAY</button>
                 </div>
                 <div className='w-1/6 h-12 prismBGColor items-center text-center'>
                 </div>

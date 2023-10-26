@@ -30,7 +30,7 @@ const ContextProvider = ({ children }) => {
     const [formdata, setFormData] = useState(initState)
 
     const nextStep = () => {
-        if (step <= 2) {
+        if (step <= 3) {
             setStep(step + 1)
         }
     }

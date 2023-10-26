@@ -7,7 +7,14 @@ import { AiFillLeftCircle } from "react-icons/ai";
 export const Membership2 = () => {
 
     const { formdata, handleChange, nextStep, prevStep, membership } = useContext(Context)
-    console.log(formdata)
+
+    const handleNext = () => {
+        // if (formdata.orgName && formdata.orgCategory && formdata.orgStreetAdd && formdata.orgCity && formdata.orgState && formdata.orgCountry && formdata.orgPostal && formdata.orgEmail && formdata.orgPhone && formdata.userFirstName && formdata.userLastName && formdata.userEmail && formdata.userPass) {
+        nextStep()
+        // } else {
+        //     alert("Please fill all required details")
+        // }
+    }
 
     return (
         <div className='2xl:w-3/5 xl:w-3/5 lg:w-3/5 md:w-5/6 sm:w-5/6 m-auto mt-20'>
@@ -140,7 +147,7 @@ export const Membership2 = () => {
                     <AiFillLeftCircle fontSize={"20px"} color={"#F5F3ED"} />
                     <button onClick={prevStep} className='mt-2 studiofont text-[15px] font-normal prismTextColor'> GO BACK</button>
                 </div>
-                <div className='w-72 h-12 flex gap-1 items-center' onClick={nextStep}>
+                <div className='w-72 h-12 flex gap-1 items-center' onClick={handleNext}>
                     <div className='w-5/6 h-12 bg-neutral-500 items-center text-center'>
                         <button className='mt-2 bwStretchfont text-[21px] items-center text-neutral-800 font-extrabold'>NEXT: CONFIRM & PAY</button>
                     </div>
