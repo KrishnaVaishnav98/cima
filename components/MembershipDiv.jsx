@@ -1,10 +1,13 @@
 'use client'
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { Button } from './Button'
+import { Context } from '@app/context/Context'
 
 export const MembershipDiv = ({ flag1, flag2, flag3, setFlag1, setFlag2, setFlag3 }) => {
 
+    const { membership } = useContext(Context)
+    
     return (
         <div className='mx-20 my-16 studiofont prismTextColor'>
             <div className='text-left'>

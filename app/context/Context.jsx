@@ -7,10 +7,27 @@ const obj = {
     step: 1
 }
 
+const initState = {
+    orgName: "",
+    orgCategory: "",
+    orgStreetAdd: "",
+    orgCity: "",
+    orgState: "",
+    orgCountry: "",
+    orgPostal: "",
+    orgEmail: "",
+    orgPhone: "",
+    userFirstName: "",
+    userLastName: "",
+    userEmail: "",
+    userPass: "",
+}
+
 const ContextProvider = ({ children }) => {
 
     const [step, setStep] = useState(obj.step)
     const [membership, setMembership] = useState([])
+    const [formdata, setFormData] = useState(initState)
 
     const nextStep = () => {
         if (step <= 2) {
@@ -28,8 +45,12 @@ const ContextProvider = ({ children }) => {
         setStep(1)
     }
 
+    const handleChange = ({ name, value }) => {
+        setFormData({ ...formdata, [name]: value })
+    }
+
     return (
-        <Context.Provider value={{ step, nextStep, prevStep, toPageOne, membership, setMembership }}>
+        <Context.Provider value={{ step, nextStep, prevStep, toPageOne, membership, setMembership, formdata, handleChange }}>
             {children}
         </Context.Provider>
     )

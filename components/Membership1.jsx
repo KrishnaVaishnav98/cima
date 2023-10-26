@@ -8,21 +8,40 @@ import { Context } from '@app/context/Context'
 export const Membership1 = () => {
 
     const { step, nextStep, membership, setMembership } = useContext(Context)
-    const [flag1, setFlag1] = useState(false)
-    const [flag2, setFlag2] = useState(false)
-    const [flag3, setFlag3] = useState(false)
+
+    const [flag1, setFlag1] = useState(membership.includes("classC") ? true : false)
+    const [flag2, setFlag2] = useState(membership.includes("classB") ? true : false)
+    const [flag3, setFlag3] = useState(membership.includes("classA") ? true : false)
 
     const handleClick = () => {
         let newMembership = [...membership];
 
         if (flag1) {
-            newMembership.push("classC");
+            if (!newMembership.includes("classC")) {
+                newMembership.push("classC");
+            }
+        } else if (!flag1) {
+            if (newMembership.includes("classC")) {
+                newMembership.splice(newMembership.indexOf("classC"), 1)
+            }
         }
         if (flag2) {
-            newMembership.push("classB");
+            if (!newMembership.includes("classB")) {
+                newMembership.push("classB");
+            }
+        } else if (!flag2) {
+            if (newMembership.includes("classB")) {
+                newMembership.splice(newMembership.indexOf("classB"), 1)
+            }
         }
         if (flag3) {
-            newMembership.push("classA");
+            if (!newMembership.includes("classA")) {
+                newMembership.push("classA");
+            }
+        } else if (!flag3) {
+            if (newMembership.includes("classA")) {
+                newMembership.splice(newMembership.indexOf("classA"), 1)
+            }
         }
 
         setMembership(newMembership);

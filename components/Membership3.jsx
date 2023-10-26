@@ -1,11 +1,38 @@
 'use client'
 import { Context } from '@app/context/Context'
 import Link from 'next/link'
-import React, { useContext } from 'react'
+import axios from 'axios';
+import React, { useContext, useState } from 'react'
 
 export const Membership3 = () => {
 
-    const { step, nextStep, prevStep } = useContext(Context)
+    const { step, nextStep, prevStep, formdata, toPageOne, membership } = useContext(Context)
+    const [terms, setTerms] = useState(false)
+
+    const handleRadio = (e) => {
+        e.target.checked ? setTerms(true) : setTerms(false)
+    }
+
+    const handleConfirm = () => {
+        if (!terms) {
+            alert("Please check 'I have read and agree to the terms of service' before proceeding.");
+        } else {
+            alert("Conefirmation successfull !! Proceed to pay")
+        }
+    }
+
+    const handlePay = async () => {
+        try {
+            const response = await axios.post("http://localhost:8080/users", formdata);
+            const response2 = await axios.post("http://localhost:8080/subscription", { membership, userEmail: formdata.userEmail });
+
+            alert("Registration successfull")
+
+        } catch (error) {
+            console.error('Axios Error:', error);
+        }
+
+    }
 
     return (
         <>
@@ -14,12 +41,20 @@ export const Membership3 = () => {
                     <div className='bg-neutral-900 p-10 m-5'>
                         <div className='2xl:flex xl:flex lg:flex md:flex sm:block justify-between content-center'>
                             <p className='studiofont prismTextColor 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-sm sm:text-sm text-left font-semibold'>Membership Type</p>
-                            <button className='studiofont prismTextColor 2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[10px] sm:text-[10px] font-normal items-center'>EDIT</button>
+                            <button className='studiofont prismTextColor 2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[10px] sm:text-[10px] font-normal items-center'
+                                onClick={() => toPageOne()}
+                            >EDIT</button>
                         </div>
 
                         <div className='text-left mt-8 text-lg  '>
                             <p className='studiofont prismTextColor font-semibold'>$3,027.21 / year</p>
-                            <p className='studiofont prismTextColor font-normal mt-4'>Basic Tier</p>
+                            <div className='flex'>
+                                {
+                                    membership?.map((el) => (
+                                        <p className='studiofont prismTextColor font-normal mt-4 pr-1'>{el}</p>
+                                    ))
+                                }
+                            </div>
                             <p className='studiofont prismTextColor font-normal'> CIMA Membership: $500-50,000 revenue per year</p>
                         </div>
                     </div>
@@ -27,37 +62,46 @@ export const Membership3 = () => {
                     <div className='bg-neutral-900 p-10 m-5'>
                         <div className='2xl:flex xl:flex lg:flex md:flex sm:block justify-between content-center'>
                             <p className='studiofont prismTextColor 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-sm sm:text-sm text-left font-semibold'>Organization Details</p>
-                            <button className='studiofont prismTextColor 2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[10px] sm:text-[10px] font-normal items-center'>EDIT</button>
+                            <button className='studiofont prismTextColor 2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[10px] sm:text-[10px] font-normal items-center'
+                                onClick={() => prevStep()}
+                            >EDIT</button>
                         </div>
 
                         <div className='text-left mt-8'>
-                            <p className='studiofont prismTextColor font-semibold text-lg'>Artist Name</p>
+                            <p className='studiofont prismTextColor font-semibold text-lg'>{formdata.orgName ? formdata.orgName : "Artist Name"}</p>
                             <p className='studiofont prismTextColor font-normal mt-2 text-lg'>Artist</p>
-                            <p className='studiofont prismTextColor font-normal text-sm'>  Dance, Pop, Electric</p>
+                            <p className='studiofont prismTextColor font-normal text-sm'>{formdata.orgCategory ? formdata.orgCategory : "category"}</p>
                         </div>
 
                         <div className='text-left mt-8'>
-                            <p className='studiofont prismTextColor font-normal text-lg'>123 Street, Unit 15 </p>
-                            <p className='studiofont prismTextColor font-normal text-lg'>Toronto, ON, CA</p>
-                            <p className='studiofont prismTextColor font-normal text-lg'>  M6H 8E1</p>
+                            <p className='studiofont prismTextColor font-normal text-lg'>{formdata.orgStreetAdd ? formdata.orgStreetAdd : "Street Address"} </p>
+                            <p className='studiofont prismTextColor font-normal text-lg'>
+                                {(formdata.orgCity || formdata.orgState || formdata.orgCountry) ?
+                                    formdata.orgCity + " " + formdata.orgState + " " + formdata.orgCountry
+                                    : "state, country"
+                                }
+                            </p>
+                            <p className='studiofont prismTextColor font-normal text-lg'>{formdata.orgName ? formdata.orgName : "Artist Name"}</p>
                         </div>
 
                         <div className='text-left mt-8'>
-                            <p className='studiofont prismTextColor font-normal text-lg'>inquires@organization.com  </p>
-                            <p className='studiofont prismTextColor font-normal text-lg'>(416) 555-5555</p>
-                            <p className='studiofont prismTextColor font-normal text-lg'>organizationname.com</p>
+                            <p className='studiofont prismTextColor font-normal text-lg'>{formdata.orgPostal ? formdata.orgPostal : "Postal/ zip code"} </p>
+                            <p className='studiofont prismTextColor font-normal text-lg'>{formdata.orgPhone ? formdata.orgPhone : "Phone"}</p>
+                            <p className='studiofont prismTextColor font-normal text-lg'>{formdata.orgEmail ? formdata.orgEmail : "Email"}</p>
                         </div>
                     </div>
 
                     <div className='bg-neutral-900 p-10 m-5'>
                         <div className='2xl:flex xl:flex lg:flex md:flex sm:block justify-between content-center'>
                             <p className='studiofont prismTextColor 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-sm sm:text-sm text-left font-semibold'>Profile Details</p>
-                            <button className='studiofont prismTextColor 2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[10px] sm:text-[10px] font-normal items-center'>EDIT</button>
+                            <button className='studiofont prismTextColor 2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[10px] sm:text-[10px] font-normal items-center'
+                                onClick={() => prevStep()}
+                            >EDIT</button>
                         </div>
 
                         <div className='text-left mt-8'>
-                            <p className='studiofont prismTextColor font-semibold text-lg'>FirstName LastName</p>
-                            <p className='studiofont prismTextColor font-normal mt-2 text-lg'>first.last@organization.com</p>
+                            <p className='studiofont prismTextColor font-semibold text-lg'>{(formdata.userFirstName || formdata.userLastName) ? formdata.userFirstName + " " + formdata.userLastName : "FirstName LastName"}</p>
+                            <p className='studiofont prismTextColor font-normal mt-2 text-lg'>{formdata.userEmail ? formdata.userEmail : "Email"}</p>
                         </div>
 
                         <div className='text-left mt-8'>
@@ -106,14 +150,21 @@ export const Membership3 = () => {
 
                     <div className='mt-8'>
                         <p className='text-left text-[#7A7A7A]'>Credit card number</p>
-                        <input type='number' className='studiofont text-2xl text-[#212121] text-left mt-1 prismBGColor w-full outline-none placeholder-neutral-400' placeholder='XXXX - XXXX - XXXX - XXXX' />
+                        <input type='number' className='studiofont text-2xl text-[#212121] text-left mt-1 prismBGColor w-full outline-none placeholder-neutral-400'
+                            placeholder='XXXX - XXXX - XXXX - XXXX'
+                            minLength="16" maxLength="19"
+                        />
                         <div className='mt-2 bg-neutral-900 h-[1px]' />
                     </div>
 
                     <div className='2xl:flex xl:flex lg:flex md:flex sm:block 2xl:gap-6 xl:gap-6 lg:gap-2 md:gap-2 sm:gap-0'>
                         <div className='mt-8'>
                             <p className='text-left text-[#7A7A7A]'>Security code</p>
-                            <input type='number' className='studiofont text-2xl text-[#212121] text-left mt-1 prismBGColor w-full outline-none placeholder-neutral-400' placeholder='XXX' />
+                            <input
+                                type='number' className='studiofont text-2xl text-[#212121] text-left mt-1 prismBGColor w-full outline-none placeholder-neutral-400'
+                                placeholder='XXX'
+                                maxLength="3"
+                            />
                             <div className='mt-2 bg-neutral-900 h-[1px]' />
                         </div>
                         <div className='mt-8'>
@@ -125,13 +176,17 @@ export const Membership3 = () => {
 
                     <div className='text-left mt-6'>
                         <label htmlFor="" className='studiofont font-normal text-[#212121]'>
-                            <input type="radio" className='w-4 h-4 mt-4' />
+                            <input type="radio" className='w-4 h-4 mt-4'
+                                onChange={handleRadio}
+                            />
                             <span className='ml-2'>I have read and agree to the terms of service.</span>
                         </label>
                     </div>
                     <div className='w-40 mt-8 h-12 flex gap-1 items-center '>
                         <div className='w-5/6 h-12 bg-[#333333] items-center text-center'>
-                            <button className='mt-2 bwStretchfont text-[21px] items-center prismTextColor font-extrabold'>CONFIRM</button>
+                            <button className='mt-2 bwStretchfont text-[21px] items-center prismTextColor font-extrabold'
+                                onClick={handleConfirm}
+                            >CONFIRM</button>
                         </div>
                         <div className='w-1/6 h-12 bg-[#333333] items-center text-center'>
                         </div>
@@ -143,7 +198,9 @@ export const Membership3 = () => {
 
             <div className='w-40 mt-8 h-12 flex gap-1 items-center m-auto'>
                 <div className='w-5/6 h-12 prismBGColor items-center text-center'>
-                    <button className='mt-2 bwStretchfont text-[21px] items-center text-[#333333] font-extrabold'>PAY</button>
+                    <button className='mt-2 bwStretchfont text-[21px] items-center text-[#333333] font-extrabold'
+                        onClick={handlePay}
+                    >PAY</button>
                 </div>
                 <div className='w-1/6 h-12 prismBGColor items-center text-center'>
                 </div>

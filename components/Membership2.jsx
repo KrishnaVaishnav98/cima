@@ -6,8 +6,8 @@ import { AiFillLeftCircle } from "react-icons/ai";
 
 export const Membership2 = () => {
 
-    const { step, nextStep, prevStep, membership } = useContext(Context)
-    console.log(membership)
+    const { formdata, handleChange, nextStep, prevStep, membership } = useContext(Context)
+    console.log(formdata)
 
     return (
         <div className='2xl:w-3/5 xl:w-3/5 lg:w-3/5 md:w-5/6 sm:w-5/6 m-auto mt-20'>
@@ -15,36 +15,45 @@ export const Membership2 = () => {
                 <p className='studiofont prismTextColor text-2xl text-left font-semibold'>Your Organization</p>
                 <div className='text-left mt-8 w-full'>
                     <input className='bg-neutral-900 w-full outline-none prismTextColor placeholder-neutral-400'
-                        type="text" placeholder='Your organization, group or company name' />
+                        type="text" placeholder='Your organization, group or company name'
+                        name={"orgName"} value={formdata.orgName} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}
+                    />
                     <hr className='prismTextColor mt-2' />
                 </div>
                 <div className='text-left mt-8 w-full text-neutral-400'>
-                    <select name="" id="" className='bg-neutral-900 w-full outline-none' >
+                    <select name="orgCategory" className='bg-neutral-900 w-full outline-none'
+                        value={formdata.orgCategory} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}>
                         <option value="" >Category of your organization</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
                     </select>
                     <hr className='prismTextColor mt-2' />
                 </div>
                 <div className='text-left mt-8 w-full'>
                     <input className='bg-neutral-900 w-full outline-none prismTextColor placeholder-neutral-400'
-                        type="text" placeholder='Street Address' />
+                        type="text" placeholder='Street Address'
+                        name={"orgStreetAdd"} value={formdata.orgStreetAdd} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}
+                    />
                     <hr className='prismTextColor mt-2' />
                 </div>
 
                 <div className='2xl:flex xl:flex lg:flex md:block sm:block gap-10'>
                     <div className='text-left mt-8 w-full'>
                         <input className='bg-neutral-900 w-full outline-none prismTextColor placeholder-neutral-400'
-                            type="text" placeholder='City' />
+                            type="text" placeholder='City'
+                            name={"orgCity"} value={formdata.orgCity} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}
+                        />
                         <hr className='prismTextColor mt-2' />
                     </div>
                     <div className='text-left mt-8 w-full text-neutral-400'>
-                        <select name="" id="" className='bg-neutral-900 w-full outline-none' >
+                        <select className='bg-neutral-900 w-full outline-none'
+                            name={"orgState"} value={formdata.orgState} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}
+                        >
                             <option value="" >Province / State</option>
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
                         </select>
                         <hr className='prismTextColor mt-2' />
                     </div>
@@ -53,12 +62,16 @@ export const Membership2 = () => {
                 <div className='2xl:flex xl:flex lg:flex md:block sm:block gap-10'>
                     <div className='text-left mt-8 w-full'>
                         <input className='bg-neutral-900 w-full outline-none prismTextColor placeholder-neutral-400'
-                            type="text" placeholder='Country' />
+                            type="text" placeholder='Country'
+                            name={"orgCountry"} value={formdata.orgCountry} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}
+                        />
                         <hr className='prismTextColor mt-2' />
                     </div>
                     <div className='text-left mt-8 w-full'>
                         <input className='bg-neutral-900 w-full outline-none prismTextColor placeholder-neutral-400'
-                            type="text" placeholder='Postal / Zip' />
+                            type="number" placeholder='Postal / Zip'
+                            name={"orgPostal"} value={formdata.orgPostal} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}
+                        />
                         <hr className='prismTextColor mt-2' />
                     </div>
                 </div>
@@ -66,12 +79,16 @@ export const Membership2 = () => {
                 <div className='2xl:flex xl:flex lg:flex md:block sm:block gap-10'>
                     <div className='text-left mt-8 w-full'>
                         <input className='bg-neutral-900 w-full outline-none prismTextColor placeholder-neutral-400'
-                            type="email" placeholder='Organization Email Address' />
+                            type="email" placeholder='Organization Email Address'
+                            name={"orgEmail"} value={formdata.orgEmail} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}
+                        />
                         <hr className='prismTextColor mt-2' />
                     </div>
                     <div className='text-left mt-8 w-full'>
                         <input className='bg-neutral-900 w-full outline-none prismTextColor placeholder-neutral-400'
-                            type="tel" placeholder='Organization Phone Number' />
+                            type="tel" placeholder='Organization Phone Number'
+                            name={"orgPhone"} value={formdata.orgPhone} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}
+                        />
                         <hr className='prismTextColor mt-2' />
                     </div>
                 </div>
@@ -84,25 +101,33 @@ export const Membership2 = () => {
                 <div className='2xl:flex xl:flex lg:flex md:block sm:block gap-10'>
                     <div className='text-left mt-8 w-full'>
                         <input className='bg-neutral-900 w-full outline-none prismTextColor placeholder-neutral-400'
-                            type="text" placeholder='First Name' />
+                            type="text" placeholder='First Name'
+                            name={"userFirstName"} value={formdata.userFirstName} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}
+                        />
                         <hr className='prismTextColor mt-2' />
                     </div>
                     <div className='text-left mt-8 w-full'>
                         <input className='bg-neutral-900 w-full outline-none prismTextColor placeholder-neutral-400'
-                            type="text" placeholder='Last Name' />
+                            type="text" placeholder='Last Name'
+                            name={"userLastName"} value={formdata.userLastName} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}
+                        />
                         <hr className='prismTextColor mt-2' />
                     </div>
                 </div>
 
                 <div className='text-left mt-8 w-full'>
                     <input className='bg-neutral-900 w-full outline-none prismTextColor placeholder-neutral-400'
-                        type="email" placeholder='Email Address' />
+                        type="email" placeholder='Email Address'
+                        name={"userEmail"} value={formdata.userEmail} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}
+                    />
                     <hr className='prismTextColor mt-2' />
                 </div>
 
                 <div className='text-left mt-8 w-full'>
                     <input className='bg-neutral-900 w-full outline-none prismTextColor placeholder-neutral-400'
-                        type="password" placeholder='Password' />
+                        type="password" placeholder='Password'
+                        name={"userPass"} value={formdata.userPass} onChange={(e) => handleChange({ name: e.target.name, value: e.target.value })}
+                    />
                     <hr className='prismTextColor mt-2' />
                 </div>
 

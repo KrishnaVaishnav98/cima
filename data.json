@@ -1,16 +1,84 @@
 {
   "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "orgName": "ABC",
+      "orgCategory": "2",
+      "orgStreetAdd": "ABC",
+      "orgCity": "Surat",
+      "orgState": "1",
+      "orgCountry": "India",
+      "orgPostal": "3132132",
+      "orgEmail": "a@gmail.com",
+      "orgPhone": "9876543210",
+      "userFirstName": "Krishna",
+      "userLastName": "Vaishnav",
+      "userEmail": "k@gmail.com",
+      "userPass": "1234",
+      "id": 1
+    },
+    {
+      "orgName": "test 2",
+      "orgCategory": "2",
+      "orgStreetAdd": "ABC",
+      "orgCity": "Surat",
+      "orgState": "2",
+      "orgCountry": "India",
+      "orgPostal": "3132132",
+      "orgEmail": "a@gmail.com",
+      "orgPhone": "9876543210",
+      "userFirstName": "Krishna2",
+      "userLastName": "Vaishnav",
+      "userEmail": "k2@gmail.com",
+      "userPass": "1234",
+      "id": 2
+    },
+    {
+      "orgName": "test 3",
+      "orgCategory": "2",
+      "orgStreetAdd": "ABC",
+      "orgCity": "Surat",
+      "orgState": "2",
+      "orgCountry": "India",
+      "orgPostal": "3132132",
+      "orgEmail": "a@gmail.com",
+      "orgPhone": "9876543210",
+      "userFirstName": "Krishna3",
+      "userLastName": "Vaishnav",
+      "userEmail": "k2@gmail.com",
+      "userPass": "1234",
+      "id": 3
+    },
+    {
+      "orgName": "test 3",
+      "orgCategory": "2",
+      "orgStreetAdd": "ABC",
+      "orgCity": "Surat",
+      "orgState": "2",
+      "orgCountry": "India",
+      "orgPostal": "3132132",
+      "orgEmail": "a@gmail.com",
+      "orgPhone": "9876543210",
+      "userFirstName": "Krishna3",
+      "userLastName": "Vaishnav",
+      "userEmail": "k2@gmail.com",
+      "userPass": "1234",
+      "id": 4
     }
   ],
   "subscription": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "membership": [
+        "classA"
+      ],
+      "userEmail": "k2@gmail.com",
+      "id": 1
+    },
+    {
+      "membership": [
+        "classA"
+      ],
+      "userEmail": "k2@gmail.com",
+      "id": 2
     }
   ]
 }
